@@ -24,7 +24,7 @@
   "gnetId": 1860,
   "graphTooltip": 0,
   "id": 4,
-  "iteration": 1637609227443,
+  "iteration": 1637609227445,
   "links": [
     {
       "icon": "external link",
@@ -102,7 +102,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
+        "h": 5,
         "w": 24,
         "x": 0,
         "y": 1
@@ -273,10 +273,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
+        "h": 5,
         "w": 24,
         "x": 0,
-        "y": 5
+        "y": 6
       },
       "id": 154,
       "links": [],
@@ -400,6 +400,167 @@
     {
       "cacheTimeout": null,
       "datasource": "Prometheus",
+      "description": "Non available RAM memory",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "decimals": 0,
+          "mappings": [],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "rgba(50, 172, 45, 0.97)",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 80
+              },
+              {
+                "color": "rgba(245, 54, 54, 0.9)",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 24,
+        "x": 0,
+        "y": 11
+      },
+      "hideTimeOverride": false,
+      "id": 16,
+      "links": [],
+      "options": {
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "8.2.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "100 - ((node_memory_MemAvailable_bytes{job=\"contabo_01\"} * 100) / node_memory_MemTotal_bytes{job=\"contabo_01\"})",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "contabo_01",
+          "refId": "B",
+          "step": 240
+        },
+        {
+          "exemplar": true,
+          "expr": "100 - ((node_memory_MemAvailable_bytes{job=\"contabo_02\"} * 100) / node_memory_MemTotal_bytes{job=\"contabo_02\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_02",
+          "refId": "A"
+        },
+        {
+          "exemplar": true,
+          "expr": "100 - ((node_memory_MemAvailable_bytes{job=\"contabo_03\"} * 100) / node_memory_MemTotal_bytes{job=\"contabo_03\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_03",
+          "refId": "C"
+        },
+        {
+          "exemplar": true,
+          "expr": "100 - ((node_memory_MemAvailable_bytes{job=\"contabo_04\"} * 100) / node_memory_MemTotal_bytes{job=\"contabo_04\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_04",
+          "refId": "D"
+        },
+        {
+          "exemplar": true,
+          "expr": "100 - ((node_memory_MemAvailable_bytes{job=\"contabo_05\"} * 100) / node_memory_MemTotal_bytes{job=\"contabo_05\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_05",
+          "refId": "E"
+        },
+        {
+          "exemplar": true,
+          "expr": "100 - ((node_memory_MemAvailable_bytes{job=\"contabo_06\"} * 100) / node_memory_MemTotal_bytes{job=\"contabo_06\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_06",
+          "refId": "F"
+        },
+        {
+          "exemplar": true,
+          "expr": "100 - ((node_memory_MemAvailable_bytes{job=\"contabo_07\"} * 100) / node_memory_MemTotal_bytes{job=\"contabo_07\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_07",
+          "refId": "G"
+        },
+        {
+          "exemplar": true,
+          "expr": "100 - ((node_memory_MemAvailable_bytes{job=\"contabo_08\"} * 100) / node_memory_MemTotal_bytes{job=\"contabo_08\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_08",
+          "refId": "H"
+        },
+        {
+          "exemplar": true,
+          "expr": "100 - ((node_memory_MemAvailable_bytes{job=\"contabo_09\"} * 100) / node_memory_MemTotal_bytes{job=\"contabo_09\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_09",
+          "refId": "I"
+        },
+        {
+          "exemplar": true,
+          "expr": "100 - ((node_memory_MemAvailable_bytes{job=\"contabo_10\"} * 100) / node_memory_MemTotal_bytes{job=\"contabo_10\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_10",
+          "refId": "J"
+        },
+        {
+          "exemplar": true,
+          "expr": "100 - ((node_memory_MemAvailable_bytes{job=\"contabo_11\"} * 100) / node_memory_MemTotal_bytes{job=\"contabo_11\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_11",
+          "refId": "K"
+        },
+        {
+          "exemplar": true,
+          "expr": "100 - ((node_memory_MemAvailable_bytes{job=\"contabo_12\"} * 100) / node_memory_MemTotal_bytes{job=\"contabo_12\"})",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_12",
+          "refId": "L"
+        }
+      ],
+      "title": "RAM Used",
+      "type": "gauge"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": "Prometheus",
       "description": "Busy state of all CPU cores together",
       "fieldConfig": {
         "defaults": {
@@ -444,7 +605,7 @@
         "h": 4,
         "w": 3,
         "x": 0,
-        "y": 9
+        "y": 16
       },
       "id": 264,
       "links": [],
@@ -478,23 +639,14 @@
     {
       "cacheTimeout": null,
       "datasource": "Prometheus",
-      "description": "Used Root FS",
+      "description": "Non available RAM memory",
       "fieldConfig": {
         "defaults": {
           "color": {
             "mode": "thresholds"
           },
-          "mappings": [
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "text": "N/A"
-                }
-              },
-              "type": "special"
-            }
-          ],
+          "decimals": 0,
+          "mappings": [],
           "max": 100,
           "min": 0,
           "thresholds": {
@@ -522,9 +674,10 @@
         "h": 4,
         "w": 3,
         "x": 3,
-        "y": 9
+        "y": 16
       },
-      "id": 265,
+      "hideTimeOverride": false,
+      "id": 266,
       "links": [],
       "options": {
         "orientation": "horizontal",
@@ -542,14 +695,23 @@
       "pluginVersion": "8.2.5",
       "targets": [
         {
-          "expr": "100 - ((node_filesystem_avail_bytes{instance=\"$node\",job=\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{instance=\"$node\",job=\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"})",
+          "expr": "((node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"} - node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"}) / (node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"} )) * 100",
           "format": "time_series",
+          "hide": true,
           "intervalFactor": 1,
           "refId": "A",
           "step": 240
+        },
+        {
+          "expr": "100 - ((node_memory_MemAvailable_bytes{instance=\"$node\",job=\"$job\"} * 100) / node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"})",
+          "format": "time_series",
+          "hide": false,
+          "intervalFactor": 1,
+          "refId": "B",
+          "step": 240
         }
       ],
-      "title": "Root FS Used",
+      "title": "RAM Used",
       "type": "gauge"
     },
     {
@@ -599,7 +761,7 @@
         "h": 4,
         "w": 3,
         "x": 6,
-        "y": 9
+        "y": 16
       },
       "id": 19,
       "links": [],
@@ -627,84 +789,6 @@
         }
       ],
       "title": "Sys Load (15m avg)",
-      "type": "gauge"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
-      "description": "Non available RAM memory",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "decimals": 0,
-          "mappings": [],
-          "max": 100,
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "rgba(50, 172, 45, 0.97)",
-                "value": null
-              },
-              {
-                "color": "rgba(237, 129, 40, 0.89)",
-                "value": 80
-              },
-              {
-                "color": "rgba(245, 54, 54, 0.9)",
-                "value": 90
-              }
-            ]
-          },
-          "unit": "percent"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 3,
-        "x": 9,
-        "y": 9
-      },
-      "hideTimeOverride": false,
-      "id": 16,
-      "links": [],
-      "options": {
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true,
-        "text": {}
-      },
-      "pluginVersion": "8.2.5",
-      "targets": [
-        {
-          "expr": "((node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"} - node_memory_MemFree_bytes{instance=\"$node\",job=\"$job\"}) / (node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"} )) * 100",
-          "format": "time_series",
-          "hide": true,
-          "intervalFactor": 1,
-          "refId": "A",
-          "step": 240
-        },
-        {
-          "expr": "100 - ((node_memory_MemAvailable_bytes{instance=\"$node\",job=\"$job\"} * 100) / node_memory_MemTotal_bytes{instance=\"$node\",job=\"$job\"})",
-          "format": "time_series",
-          "hide": false,
-          "intervalFactor": 1,
-          "refId": "B",
-          "step": 240
-        }
-      ],
-      "title": "RAM Used",
       "type": "gauge"
     },
     {
@@ -754,7 +838,7 @@
         "h": 4,
         "w": 3,
         "x": 12,
-        "y": 9
+        "y": 16
       },
       "id": 21,
       "links": [],
@@ -824,7 +908,7 @@
         "h": 2,
         "w": 2,
         "x": 18,
-        "y": 9
+        "y": 16
       },
       "id": 14,
       "interval": null,
@@ -901,7 +985,7 @@
         "h": 2,
         "w": 4,
         "x": 20,
-        "y": 9
+        "y": 16
       },
       "hideTimeOverride": true,
       "id": 15,
@@ -981,7 +1065,7 @@
         "h": 2,
         "w": 2,
         "x": 18,
-        "y": 11
+        "y": 18
       },
       "id": 23,
       "interval": null,
@@ -1058,7 +1142,7 @@
         "h": 2,
         "w": 2,
         "x": 20,
-        "y": 11
+        "y": 18
       },
       "id": 75,
       "interval": null,
@@ -1133,7 +1217,7 @@
         "h": 2,
         "w": 2,
         "x": 22,
-        "y": 11
+        "y": 18
       },
       "id": 18,
       "interval": null,
@@ -1165,6 +1249,83 @@
       ],
       "title": "SWAP Total",
       "type": "stat"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": "Prometheus",
+      "description": "Used Root FS",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "rgba(50, 172, 45, 0.97)",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 80
+              },
+              {
+                "color": "rgba(245, 54, 54, 0.9)",
+                "value": 90
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 3,
+        "x": 3,
+        "y": 20
+      },
+      "id": 265,
+      "links": [],
+      "options": {
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "8.2.5",
+      "targets": [
+        {
+          "expr": "100 - ((node_filesystem_avail_bytes{instance=\"$node\",job=\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{instance=\"$node\",job=\"$job\",mountpoint=\"/\",fstype!=\"rootfs\"})",
+          "format": "time_series",
+          "intervalFactor": 1,
+          "refId": "A",
+          "step": 240
+        }
+      ],
+      "title": "Root FS Used",
+      "type": "gauge"
     },
     {
       "cacheTimeout": null,
@@ -1213,7 +1374,7 @@
         "h": 4,
         "w": 3,
         "x": 3,
-        "y": 13
+        "y": 24
       },
       "id": 155,
       "links": [],
@@ -1251,7 +1412,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 17
+        "y": 28
       },
       "id": 263,
       "panels": [],
@@ -1294,7 +1455,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 18
+        "y": 29
       },
       "hiddenSeries": false,
       "id": 77,
@@ -1485,7 +1646,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 18
+        "y": 29
       },
       "hiddenSeries": false,
       "id": 78,
@@ -1667,7 +1828,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 25
+        "y": 36
       },
       "hiddenSeries": false,
       "id": 74,
@@ -1786,7 +1947,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 25
+        "y": 36
       },
       "height": "",
       "hiddenSeries": false,
@@ -1907,9 +2068,9 @@
       {
         "allValue": null,
         "current": {
-          "selected": false,
-          "text": "contabo_01",
-          "value": "contabo_01"
+          "selected": true,
+          "text": "contabo_03",
+          "value": "contabo_03"
         },
         "datasource": "Prometheus",
         "definition": "",
@@ -1938,8 +2099,8 @@
         "allValue": null,
         "current": {
           "selected": false,
-          "text": "10.0.15.3:9100",
-          "value": "10.0.15.3:9100"
+          "text": "173.212.235.84:9100",
+          "value": "173.212.235.84:9100"
         },
         "datasource": "Prometheus",
         "definition": "label_values(node_uname_info{job=\"$job\"}, instance)",
@@ -2023,5 +2184,5 @@
   "timezone": "browser",
   "title": "Many nods",
   "uid": "rYdddlPWk2",
-  "version": 22
+  "version": 23
 }
