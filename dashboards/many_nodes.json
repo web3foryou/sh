@@ -232,6 +232,174 @@
     {
       "cacheTimeout": null,
       "datasource": "Prometheus",
+      "description": "Busy state of all CPU cores together (15 min average)",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "match": "null",
+                "result": {
+                  "text": "N/A"
+                }
+              },
+              "type": "special"
+            }
+          ],
+          "max": 100,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "rgba(50, 172, 45, 0.97)",
+                "value": null
+              },
+              {
+                "color": "rgba(237, 129, 40, 0.89)",
+                "value": 85
+              },
+              {
+                "color": "rgba(245, 54, 54, 0.9)",
+                "value": 95
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 5,
+        "w": 24,
+        "x": 0,
+        "y": 6
+      },
+      "id": 19,
+      "links": [],
+      "options": {
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true,
+        "text": {}
+      },
+      "pluginVersion": "8.2.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "avg(node_load15{job=\"contabo_01\"}) /  count(count(node_cpu_seconds_total{job=\"contabo_01\"}) by (cpu)) * 100",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "contabo_01",
+          "refId": "A",
+          "step": 240
+        },
+        {
+          "exemplar": true,
+          "expr": "avg(node_load15{job=\"contabo_02\"}) /  count(count(node_cpu_seconds_total{job=\"contabo_02\"}) by (cpu)) * 100",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_02",
+          "refId": "B"
+        },
+        {
+          "exemplar": true,
+          "expr": "avg(node_load15{job=\"contabo_03\"}) /  count(count(node_cpu_seconds_total{job=\"contabo_03\"}) by (cpu)) * 100",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_03",
+          "refId": "C"
+        },
+        {
+          "exemplar": true,
+          "expr": "avg(node_load15{job=\"contabo_04\"}) /  count(count(node_cpu_seconds_total{job=\"contabo_04\"}) by (cpu)) * 100",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_04",
+          "refId": "D"
+        },
+        {
+          "exemplar": true,
+          "expr": "avg(node_load15{job=\"contabo_05\"}) /  count(count(node_cpu_seconds_total{job=\"contabo_05\"}) by (cpu)) * 100",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_05",
+          "refId": "E"
+        },
+        {
+          "exemplar": true,
+          "expr": "avg(node_load15{job=\"contabo_06\"}) /  count(count(node_cpu_seconds_total{job=\"contabo_06\"}) by (cpu)) * 100",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_06",
+          "refId": "F"
+        },
+        {
+          "exemplar": true,
+          "expr": "avg(node_load15{job=\"contabo_07\"}) /  count(count(node_cpu_seconds_total{job=\"contabo_07\"}) by (cpu)) * 100",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_07",
+          "refId": "G"
+        },
+        {
+          "exemplar": true,
+          "expr": "avg(node_load15{job=\"contabo_08\"}) /  count(count(node_cpu_seconds_total{job=\"contabo_08\"}) by (cpu)) * 100",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_08",
+          "refId": "H"
+        },
+        {
+          "exemplar": true,
+          "expr": "avg(node_load15{job=\"contabo_09\"}) /  count(count(node_cpu_seconds_total{job=\"contabo_09\"}) by (cpu)) * 100",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_09",
+          "refId": "I"
+        },
+        {
+          "exemplar": true,
+          "expr": "avg(node_load15{job=\"contabo_10\"}) /  count(count(node_cpu_seconds_total{job=\"contabo_10\"}) by (cpu)) * 100",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_10",
+          "refId": "J"
+        },
+        {
+          "exemplar": true,
+          "expr": "avg(node_load15{job=\"contabo_11\"}) /  count(count(node_cpu_seconds_total{job=\"contabo_11\"}) by (cpu)) * 100",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_11",
+          "refId": "K"
+        },
+        {
+          "exemplar": true,
+          "expr": "avg(node_load15{job=\"contabo_12\"}) /  count(count(node_cpu_seconds_total{job=\"contabo_12\"}) by (cpu)) * 100",
+          "hide": false,
+          "interval": "",
+          "legendFormat": "contabo_12",
+          "refId": "L"
+        }
+      ],
+      "title": "Sys Load (15m avg)",
+      "type": "gauge"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": "Prometheus",
       "description": "Used Root FS",
       "fieldConfig": {
         "defaults": {
@@ -276,7 +444,7 @@
         "h": 5,
         "w": 24,
         "x": 0,
-        "y": 6
+        "y": 11
       },
       "id": 154,
       "links": [],
@@ -435,7 +603,7 @@
         "h": 5,
         "w": 24,
         "x": 0,
-        "y": 11
+        "y": 16
       },
       "hideTimeOverride": false,
       "id": 16,
@@ -605,7 +773,7 @@
         "h": 4,
         "w": 3,
         "x": 0,
-        "y": 16
+        "y": 21
       },
       "id": 264,
       "links": [],
@@ -674,7 +842,7 @@
         "h": 4,
         "w": 3,
         "x": 3,
-        "y": 16
+        "y": 21
       },
       "hideTimeOverride": false,
       "id": 266,
@@ -712,83 +880,6 @@
         }
       ],
       "title": "RAM Used",
-      "type": "gauge"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": "Prometheus",
-      "description": "Busy state of all CPU cores together (15 min average)",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "thresholds"
-          },
-          "mappings": [
-            {
-              "options": {
-                "match": "null",
-                "result": {
-                  "text": "N/A"
-                }
-              },
-              "type": "special"
-            }
-          ],
-          "max": 100,
-          "min": 0,
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "rgba(50, 172, 45, 0.97)",
-                "value": null
-              },
-              {
-                "color": "rgba(237, 129, 40, 0.89)",
-                "value": 85
-              },
-              {
-                "color": "rgba(245, 54, 54, 0.9)",
-                "value": 95
-              }
-            ]
-          },
-          "unit": "percent"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 3,
-        "x": 6,
-        "y": 16
-      },
-      "id": 19,
-      "links": [],
-      "options": {
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true,
-        "text": {}
-      },
-      "pluginVersion": "8.2.5",
-      "targets": [
-        {
-          "expr": "avg(node_load15{instance=\"$node\",job=\"$job\"}) /  count(count(node_cpu_seconds_total{instance=\"$node\",job=\"$job\"}) by (cpu)) * 100",
-          "hide": false,
-          "intervalFactor": 1,
-          "refId": "A",
-          "step": 240
-        }
-      ],
-      "title": "Sys Load (15m avg)",
       "type": "gauge"
     },
     {
@@ -838,7 +929,7 @@
         "h": 4,
         "w": 3,
         "x": 12,
-        "y": 16
+        "y": 21
       },
       "id": 21,
       "links": [],
@@ -908,7 +999,7 @@
         "h": 2,
         "w": 2,
         "x": 18,
-        "y": 16
+        "y": 21
       },
       "id": 14,
       "interval": null,
@@ -985,7 +1076,7 @@
         "h": 2,
         "w": 4,
         "x": 20,
-        "y": 16
+        "y": 21
       },
       "hideTimeOverride": true,
       "id": 15,
@@ -1065,7 +1156,7 @@
         "h": 2,
         "w": 2,
         "x": 18,
-        "y": 18
+        "y": 23
       },
       "id": 23,
       "interval": null,
@@ -1142,7 +1233,7 @@
         "h": 2,
         "w": 2,
         "x": 20,
-        "y": 18
+        "y": 23
       },
       "id": 75,
       "interval": null,
@@ -1217,7 +1308,7 @@
         "h": 2,
         "w": 2,
         "x": 22,
-        "y": 18
+        "y": 23
       },
       "id": 18,
       "interval": null,
@@ -1297,7 +1388,7 @@
         "h": 4,
         "w": 3,
         "x": 3,
-        "y": 20
+        "y": 25
       },
       "id": 265,
       "links": [],
@@ -1374,7 +1465,7 @@
         "h": 4,
         "w": 3,
         "x": 3,
-        "y": 24
+        "y": 29
       },
       "id": 155,
       "links": [],
@@ -1412,7 +1503,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 28
+        "y": 33
       },
       "id": 263,
       "panels": [],
@@ -1455,7 +1546,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 29
+        "y": 34
       },
       "hiddenSeries": false,
       "id": 77,
@@ -1646,7 +1737,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 29
+        "y": 34
       },
       "hiddenSeries": false,
       "id": 78,
@@ -1828,7 +1919,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 36
+        "y": 41
       },
       "hiddenSeries": false,
       "id": 74,
@@ -1947,7 +2038,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 36
+        "y": 41
       },
       "height": "",
       "hiddenSeries": false,
@@ -2184,5 +2275,5 @@
   "timezone": "browser",
   "title": "Many nods",
   "uid": "rYdddlPWk2",
-  "version": 23
+  "version": 24
 }
