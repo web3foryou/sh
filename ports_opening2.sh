@@ -1,5 +1,7 @@
 sudo iptables -I INPUT -p tcp --dport 22 -j ACCEPT
 sudo iptables -I INPUT -p tcp --dport 9090 -j ACCEPT
+sudo iptables -I INPUT -p tcp --dport 16349 -j ACCEPT
+sudo iptables -I INPUT -p tcp --dport 26657 -j ACCEPT
 sudo apt-get -y install iptables-persistent
 sudo netfilter-persistent save
 
