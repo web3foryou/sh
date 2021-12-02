@@ -1,6 +1,6 @@
 #!/bin/bash
-apt -s install git
-apt -s install docker-compose
+apt install git
+apt install docker-compose
 
 cd /home/
 git clone https://github.com/web3foryou/loki-node.git
