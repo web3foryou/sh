@@ -44,7 +44,7 @@ evmosd query staking validator evmosvaloper10ytstyahdykzm5j6m7uq68hyupgzudtjssux
 
 
 #ПРОВЕРКА БАЛАНСА
-amount=$(evmosd q bank balances evmos16vav8xgql5q624xpl302s9ky2ew4tut3a4j8jp | grep amount | grep -Eo '[0-9]{1,40}') \
+amount=$(evmosd q bank balances evmos1hxw292mjzpw9tpv6wa9396ejhx49w6y92lh75m | grep amount | grep -Eo '[0-9]{1,40}') \
 echo "scale=4;$amount/1000000000000000000" | bc
 
 # делегирование токенов
@@ -84,3 +84,10 @@ evmosvaloper10ytstyahdykzm5j6m7uq68hyupgzudtjssuxca - ДОНОР 1 - автос�
 
 #ределегация
 evmosd tx staking redelegate evmosvaloper10ytstyahdykzm5j6m7uq68hyupgzudtjssuxca evmosvaloper1dkhzfyg9d7gpf0sut5mwn3wspzg6pmxmac3amr 300000000888777444aphoton --chain-id=evmos_9000-2 --gas=300000   --gas-prices="0.025aphoton"   --from=$evmos_wallet_name
+1000000000000000000
+
+#Снять все:
+evmosd tx distribution withdraw-all-rewards --from $evmos_wallet_name --chain-id evmos_9000-2 --gas=300000
+
+#проверка транзы
+evmosd query tx D6E1C443F8E8EFFF0AA1DD1DBD1752D0D7DB9A335D91ADA2C1CD338D28CD14BC

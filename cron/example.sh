@@ -9,3 +9,4 @@ crontab -e
 
 0/10 * * * * bash /var/log/node/evmosdBalance.sh | tac >> /var/log/node/evmosdBalance.log
 */30 * * * * bash /var/log/node/auto_stake.sh | tac >> /var/log/node/auto_stake.log
+* * * * * bash /var/log/node/assetMantleTop.sh

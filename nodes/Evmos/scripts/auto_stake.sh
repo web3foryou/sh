@@ -4,6 +4,7 @@ source /root/.bash_profile
 pass="wcreFawsevw34f"
 validator="evmosvaloper1dkhzfyg9d7gpf0sut5mwn3wspzg6pmxmac3amr"
 
+#echo $pass | evmosd tx distribution withdraw-all-rewards -y --from $evmos_wallet_name --chain-id evmos_9000-2 --gas=300000
 echo $pass | evmosd tx distribution withdraw-all-rewards -y --from $evmos_wallet_name --chain-id evmos_9000-2
 
 sleep 30
