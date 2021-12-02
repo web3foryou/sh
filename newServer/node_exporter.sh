@@ -28,9 +28,12 @@ systemctl daemon-reload
 systemctl start node_exporter.service
 systemctl enable node_exporter.service
 #systemctl status node_exporter.service
+#systemctl restart node_exporter.service
+#journalctl -fn 100 -u node_exporter.service
 
 sudo iptables -I INPUT -p tcp --dport 22 -j ACCEPT
 sudo iptables -I INPUT -p tcp --dport 9100 -j ACCEPT
+sudo iptables -I INPUT -p tcp --dport 16349 -j ACCEPT
 sudo apt-get -y install iptables-persistent
 sudo netfilter-persistent save
 
